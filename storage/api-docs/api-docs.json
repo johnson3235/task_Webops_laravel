@@ -1,0 +1,335 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Car-Comminty List Api",
+        "description": "List of Api ya rab nfhm ya 4bab",
+        "version": "3.0"
+    },
+    "paths": {
+        "/api/users/{id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get User By Id",
+                "operationId": "be5f8e3635ad95a89ba5c1ad95ae73d7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get User Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "code": {
+                                                    "type": "integer"
+                                                },
+                                                "email_verified_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "expired_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "photo": {
+                                                    "type": "string"
+                                                },
+                                                "gender": {
+                                                    "type": "boolean"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "invalid ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Some thing Error"
+                                        },
+                                        "data": {
+                                            "type": "jsonContent",
+                                            "example": ""
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/update/{id}": {
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Update User Data",
+                "operationId": "0aaf1f295953bf4949a6678dd531139e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "image": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "example title",
+                                    "email": "user email",
+                                    "image": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get User Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "code": {
+                                                    "type": "integer"
+                                                },
+                                                "email_verified_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "expired_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "photo": {
+                                                    "type": "string"
+                                                },
+                                                "gender": {
+                                                    "type": "boolean"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "invalid ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Some thing Error"
+                                        },
+                                        "data": {
+                                            "type": "jsonContent",
+                                            "example": ""
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Delete User profile",
+                "operationId": "c6133f855c4264842326ad08244db990",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Delete User Successfully"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "example": "{}"
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "invalid ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Some thing Error"
+                                        },
+                                        "data": {
+                                            "type": "jsonContent",
+                                            "example": ""
+                                        },
+                                        "ERROR": {
+                                            "type": "jsonContent",
+                                            "example": "{}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
